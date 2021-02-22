@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CMPS 162: Module 4 Programming Project</title>
+    <style>
+      * {
+        font-family: monospace;
+      }
+    </style>
+    <script>
+      //-----------//
+      // Functions //
+      //-----------//
+      console.log("Functions");
+
+      // 1. Write a function named 'greet' that greets the user. Make sure that you
+      //    call it as well.
+
+      function greet() {
+        return "Hello!";
+      }
+      console.log(greet());
+
+      // 2. Write a function named 'sumAndPrint' that takes two numbers as parameters,
+      //    adds them together, and prints the result to the console.
+      
+      function sumAndPrint(num1, num2) {
+        console.log(num1 + num2);
+      }
+      sumAndPrint(2, 2);
+      // 3. Write a function named 'sum' that takes two numbers as parameters,
+      //    adds them together, and returns the result.
+      function sum(var1, var2) {
+        return var1 + var2;
+      }
+      console.log(sum(2, 3));
+
+      // 4. Write a function named 'findSmallest' that finds the smallest number in
+      //    an array. For example, the answer for [23, 54, 3, 6, 4, 46] should be the
+      //    number 3. Note that the function should take an array as input data.
+      
+      const arrayOfNums = [39, 35, 82, 16, 86, 81, 99];
+      function findSmallest(numArray) {
+        let smallestNum;
+        for (let i = 0; i <= numArray.length; i++) {
+          if (i === 0) {
+            smallestNum = numArray[i];
+          } else if (numArray[i] < smallestNum) {
+            smallestNum = numArray[i];
+          }
+        }
+        return smallestNum;
+      }
+      console.log(findSmallest(arrayOfNums));
+
+      // 5. Define and implement a function named 'everySecondElement' that takes as
+      //    input an array and returns every second element in a new array. For
+      //    example, everySecondElement([1, 2, 3, 4, 5, 6]) should return [2, 4, 6].
+      //    Hint: one solution uses the % operator.
+      
+      let otherArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      function everySecondElement(everyOtherArray) {
+        let emptyArray = [];
+        for (let i = 0; i <= everyOtherArray.length; i++) {
+          if (everyOtherArray.indexOf(i) % 2 === 0) {
+            emptyArray.push(everyOtherArray[i]);
+          }
+        }
+        return emptyArray;
+      }
+      console.log(everySecondElement(otherArray));
+
+      //--------//
+      // Switch //
+      //--------//
+      console.log("Switch");
+
+      // 1. Create a date object and get the month as a number. Use a switch statement
+      //    to convert it to text, e.g., 0 becomes January.
+      
+      const date = new Date();
+      let month;
+      switch (date.getMonth()) {
+        case 0:
+          month = "January";
+          break;
+        case 1:
+          month = "February";
+          break;
+        case 2:
+          month = "March";
+          break;
+        case 3:
+          month = "April";
+          break;
+        case 4:
+          month = "May";
+          break;
+        case 5:
+          month = "June";
+          break;
+        case 6:
+          month = "July";
+          break;
+        case 7:
+          month = "August";
+          break;
+        case 8:
+          month = "September";
+          break;
+        case 9:
+          month = "October";
+          break;
+        case 10:
+          month = "November";
+          break;
+        case 11:
+          month = "December";
+          break;
+      }
+      console.log(month);
+
+      //-------//
+      // While //
+      //-------//
+     
+      console.log("While");
+
+      // 1. Create a factorial_while function that uses a while loop but otherwise
+      //    returns the same results as the following function.
+
+      function factorial_for(n) {
+        var total = 1;
+        for (var i = 1; i <= n; i++) {
+          total *= i;
+        }
+        return total;
+      }
+      console.log(factorial_for(5));
+
+      function factorial_while(num) {
+        let numberFactorial = 1;
+        let counter = 1;
+        while (counter <= num) {
+          numberFactorial *= counter;
+          counter++;
+        }
+        return numberFactorial;
+      }
+      console.log(factorial_while(5));
+      
+      //----------//
+      // Do-While //
+      //----------//
+      console.log("Do-While");
+
+      // 1. Do the same for a factorial_do_while function.
+      
+      function factorial_do_while(num) {
+        let fact = 1;
+        let counter = 1;
+        do {
+          fact *= counter;
+          counter++;
+        } while (counter <= num);
+        return fact;
+      }
+      console.log(factorial_do_while(5));
+      
+      // 2. Take the code that we wrote in the lab and create a new page called doWhile_web.html
+      // have the code output on the screen. When you check this code in, you should have
+      // module-4-programming-project.html and doWhile_web.html
+    </script>
+  </head>
+  <body>
+    See console!
+  </body>
+</html>
